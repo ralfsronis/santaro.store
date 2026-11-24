@@ -30,18 +30,7 @@
   document.querySelectorAll("[data-picker]").forEach(function (picker) {
     var tabs = Array.prototype.slice.call(picker.querySelectorAll('[role="tab"]'));
     var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
-    var indicator = picker.querySelector(".picker__indicator");
-    var current = 0;
-    // A thin rule slides to the chosen service, so the change of selection is visible.
-    function place() {
-      if (!indicator) return;
-      var t = tabs[current];
-      indicator.style.transform = "translateY(" + t.offsetTop + "px)";
-      indicator.style.height = t.offsetHeight + "px";
-    }
-    window.addEventListener("resize", place);
     function select(i, focus) {
-      current = i;
       tabs.forEach(function (t, j) {
         var on = i === j;
         t.setAttribute("aria-selected", on ? "true" : "false");
@@ -49,7 +38,6 @@
         panels[j].hidden = !on;
       });
       if (focus) tabs[i].focus();
-      place();
     }
     tabs.forEach(function (t, i) {
       t.addEventListener("click", function () { select(i, false); });
