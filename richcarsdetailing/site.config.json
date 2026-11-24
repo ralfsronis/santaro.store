@@ -1,0 +1,19 @@
+{
+  "siteUrl": "https://DOMENS.lv",
+  "businessName": "RichCarsDetailing",
+  "whatsappNumber": "37120277006",
+  "phoneDisplay": "+371 20 277 006",
+  "address": {
+    "street": "Leona Paegles iela 27B",
+    "city": "Cēsis",
+    "region": "Cēsu novads",
+    "postalCode": "LV-4101",
+    "country": "LV"
+  },
+  "whatsappMessages": {
+    "main": "Sveiki! Vēlos pieteikt auto salona tīrīšanu Cēsīs. Mans auto ir ____. Kad ir tuvākais pieejamais laiks?",
+    "kimiska": "Sveiki! Interesē salona ķīmiskā tīrīšana. Mans auto ir ____. Pievienošu traipu foto. Kāda būtu cena un kad varētu atbraukt?",
+    "detailings": "Sveiki! Interesē interjera detailings. Mans auto ir ____. Kāda būtu cena un kad varētu atbraukt?",
+    "ozonesana": "Sveiki! Interesē salona ozonēšana. Mans auto ir ____. Kāda būtu cena un kad varētu atbraukt?"
+  }
+}
