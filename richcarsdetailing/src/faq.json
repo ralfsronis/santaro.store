@@ -1,0 +1,12 @@
+[
+  {"q": "Cik maksā auto salona tīrīšana?", "a": "Auto salona tīrīšana maksā no 30 €. Precīzu cenu tavam auto pateiksim WhatsApp, kad zināsim auto modeli un salona stāvokli."},
+  {"q": "Ar ko salona tīrīšana atšķiras no ķīmiskās tīrīšanas?", "a": "Salona tīrīšana sakopj salonu no putekļiem, gružiem un netīrumiem. Ķīmisko tīrīšanu izvēlas, ja uz sēdekļiem vai paklājiem ir traipi. Ja nezini, ko izvēlēties, atsūti salona foto WhatsApp, un ieteiksim."},
+  {"q": "Kā uzzināt ķīmiskās tīrīšanas cenu?", "a": "Atsūti sēdekļu vai paklāju foto WhatsApp, un pateiksim cenu. Cena atkarīga no tā, cik daudz un ko vajag iztīrīt."},
+  {"q": "Kas ir salona ozonēšana?", "a": "Ozonēšana ir salona apstrāde ar ozona ģeneratoru, ko izmanto nepatīkamu smaku mazināšanai. Uzraksti, kad pamanīji smaku un kas varētu būt tās avots, un palīdzēsim saprast, vai ozonēšana ir piemērota."},
+  {"q": "Kā uzzināt ozonēšanas cenu?", "a": "Uzraksti mums WhatsApp, un pateiksim ozonēšanas cenu. Norādi auto modeli un kad pamanīji smaku."},
+  {"q": "Kas ir interjera detailings?", "a": "Interjera detailings ir rūpīga salona detaļu kopšana, pievēršot uzmanību šuvēm, spraugām un grūti aizsniedzamām vietām. To izvēlas, ja salonu vajag sakopt pamatīgāk."},
+  {"q": "Cik ilgi notiek salona tīrīšana?", "a": "Laiks atkarīgs no auto izmēra un salona stāvokļa. Aptuveno laiku pateiksim WhatsApp, kad vienosimies par vizīti."},
+  {"q": "Vai tīrāt uzņēmumu autoparkus?", "a": "Jā, tīrām uzņēmumu autoparkus. Vairākām mašīnām un regulārai tīrīšanai piedāvāsim labāku cenu. Uzraksti, cik auto ir autoparkā un cik bieži tos vajag tīrīt."},
+  {"q": "Kur jūs atrodaties?", "a": "Mēs atrodamies Cēsīs, {{address.street}}. Par vizītes laiku vienojamies WhatsApp."},
+  {"q": "Kā pieteikt vizīti?", "a": "Vizīti piesaki WhatsApp: spied „Pieteikt vizīti WhatsApp” vai raksti uz {{phoneDisplay}}. Sarunā vienosimies par cenu un laiku."}
+]

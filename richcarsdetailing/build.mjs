@@ -29,38 +29,68 @@ const waIcon =
 
 // Structured data – must match what is visible on the page.
 const service = (name, extra = {}) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name }, ...extra });
+// FAQ: one source for the visible answers and the FAQPage data, so they always match.
+const fill = (t) => t.replace(/\{\{([\w.]+)\}\}/g, (m, k) => k.split(".").reduce((o, x) => o[x], { address: a, phoneDisplay: cfg.phoneDisplay }));
+const faq = JSON.parse(readFileSync(join(src, "faq.json"), "utf8")).map((f) => ({ q: fill(f.q), a: fill(f.a) }));
+const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const faqHtml = faq
+  .map((f) => `          <details class="faq__item">\n            <summary><h3>${esc(f.q)}</h3></summary>\n            <p>${esc(f.a)}</p>\n          </details>`)
+  .join("\n");
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "AutomotiveBusiness",
-  "@id": `${siteUrl}/#business`,
-  name: cfg.businessName,
-  url: `${siteUrl}/`,
-  image: `${siteUrl}/img/og-pirms-pec.jpg`,
-  logo: `${siteUrl}/img/logo.png`,
-  sameAs: cfg.instagram ? [cfg.instagram] : undefined,
-  telephone: tel,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: a.street,
-    addressLocality: a.city,
-    addressRegion: a.region,
-    postalCode: a.postalCode,
-    addressCountry: a.country,
-  },
-  areaServed: { "@type": "City", name: a.city },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Auto salona kopšanas pakalpojumi",
-    itemListElement: [
-      service("Auto salona tīrīšana", {
-        priceSpecification: { "@type": "PriceSpecification", minPrice: 30, priceCurrency: "EUR" },
-      }),
-      service("Salona ķīmiskā tīrīšana"),
-      service("Interjera detailings"),
-      service("Salona ozonēšana"),
-      service("Uzņēmumu autoparku tīrīšana"),
-    ],
-  },
+  "@graph": [
+    {
+      "@type": "AutomotiveBusiness",
+      "@id": `${siteUrl}/#business`,
+      name: cfg.businessName,
+      url: `${siteUrl}/`,
+      image: `${siteUrl}/img/og-pirms-pec.jpg`,
+      logo: `${siteUrl}/img/logo.png`,
+      telephone: tel,
+      sameAs: cfg.instagram ? [cfg.instagram] : undefined,
+      hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: a.street,
+        addressLocality: a.city,
+        addressRegion: a.region,
+        postalCode: a.postalCode,
+        addressCountry: a.country,
+      },
+      areaServed: [
+        { "@type": "City", name: a.city },
+        { "@type": "AdministrativeArea", name: a.region },
+      ],
+      knowsAbout: ["Auto salona tīrīšana", "Ķīmiskā tīrīšana", "Interjera detailings", "Salona ozonēšana"],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Auto salona kopšanas pakalpojumi",
+        itemListElement: [
+          service("Auto salona tīrīšana", {
+            priceSpecification: { "@type": "PriceSpecification", minPrice: 30, priceCurrency: "EUR" },
+          }),
+          service("Salona ķīmiskā tīrīšana"),
+          service("Interjera detailings"),
+          service("Salona ozonēšana"),
+          service("Uzņēmumu autoparku tīrīšana"),
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: `${siteUrl}/`,
+      name: cfg.businessName,
+      inLanguage: "lv",
+      publisher: { "@id": `${siteUrl}/#business` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+  ],
 };
 
 const read = (p) => readFileSync(join(src, p), "utf8");
@@ -79,7 +109,7 @@ const ctx = {
   instagram: cfg.instagram,
   waNumber: cfg.whatsappNumber,
   msg: cfg.whatsappMessages,
-  logoSvg: read("logo-inline.svg").trim(),
+  faqHtml,
   year: String(new Date().getFullYear()),
   inlineCss: minifyCss(read("styles.css")),
   inlineJs: read("main.js").trim(),
@@ -87,7 +117,7 @@ const ctx = {
 };
 
 const escapeAttr = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
-const RAW = new Set(["waIcon", "logoSvg", "inlineCss", "inlineJs", "jsonLd"]);
+const RAW = new Set(["waIcon", "faqHtml", "inlineCss", "inlineJs", "jsonLd"]);
 let html = read("index.html").replace(/\{\{([\w.]+)\}\}/g, (m, key) => {
   const val = key.split(".").reduce((o, k) => (o == null ? o : o[k]), ctx);
   if (typeof val !== "string") throw new Error(`Unknown template key: ${key}`);

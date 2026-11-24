@@ -7,7 +7,7 @@
   <meta name="description" content="Auto salona tīrīšana Cēsīs no 30 €. RichCarsDetailing piedāvā arī ķīmisko tīrīšanu, interjera deteilingu un ozonēšanu. Piesaki vizīti WhatsApp.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{siteUrl}}/">
-  <meta name="theme-color" content="#faf8f4">
+  <meta name="theme-color" content="#1c1e21">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="lv_LV">
@@ -29,6 +29,7 @@
   <link rel="preload" href="fonts/manrope-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>document.documentElement.classList.add("js")</script>
+  <link rel="preload" as="image" type="image/webp" imagesrcset="img/bmw-pirms-640.webp 640w, img/bmw-pirms-1000.webp 1000w, img/bmw-pirms-1564.webp 1564w" imagesizes="100vw" fetchpriority="high">
   <style>{{inlineCss}}</style>
 
   <script type="application/ld+json">{{jsonLd}}</script>
@@ -38,8 +39,8 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <p class="site-header__place">{{address.street}}, {{address.city}}</p>
-      <nav aria-label="Galvenā navigācija">
+      <a class="wordmark" href="#" aria-label="RichCars Detailing, uz lapas sākumu"><span class="wordmark__name">RichCars</span><span class="wordmark__sub">Detailing</span></a>
+      <nav class="site-nav" aria-label="Galvenā navigācija">
         <ul class="nav">
           <li><a href="#pakalpojumi">Pakalpojumi</a></li>
           <li><a href="#uznemumiem">Uzņēmumiem</a></li>
@@ -47,36 +48,32 @@
           <li><a href="#kontakti">Kontakti</a></li>
         </ul>
       </nav>
-      <a class="btn btn--wa btn--sm" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikties</span></a>
     </div>
   </header>
 
   <main id="saturs">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero__grid">
-        <figure class="hero__media">
-          <div class="reveal" data-reveal>
-            <div class="reveal__layer">
-              <picture>
-                <source type="image/webp" srcset="img/bmw-pirms-640.webp 640w, img/bmw-pirms-1000.webp 1000w" sizes="(min-width: 1200px) 520px, (min-width: 900px) 44vw, 100vw">
-                <img src="img/bmw-pirms-1000.jpg" width="1000" height="1250" alt="BMW vadītāja puses grīda pirms tīrīšanas: paklājs, pedāļu zona un slieksnis klāti ar smiltīm un gružiem" loading="eager" fetchpriority="high" decoding="async">
-              </picture>
-              <span class="tag">Pirms</span>
-            </div>
-            <div class="reveal__layer reveal__layer--after">
-              <picture>
-                <source type="image/webp" srcset="img/bmw-pec-640.webp 640w, img/bmw-pec-1000.webp 1000w" sizes="(min-width: 1200px) 520px, (min-width: 900px) 44vw, 100vw">
-                <img src="img/bmw-pec-1000.jpg" width="1000" height="1250" alt="Tā pati BMW vadītāja puse pēc tīrīšanas: tīrs paklājs, pedāļu zona un slieksnis" loading="eager" decoding="async">
-              </picture>
-              <span class="tag">Pēc</span>
-            </div>
-            <span class="photo-logo" role="img" aria-label="RichCarsDetailing">{{logoSvg}}</span>
-            <button type="button" class="reveal__btn" aria-live="polite">
-              <span class="reveal__hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>Rādīt rezultātu</span></span>
-            </button>
-          </div>
-        </figure>
-        <div class="hero__copy">
+      <div class="reveal reveal--hero" data-reveal>
+        <div class="reveal__layer">
+          <picture>
+            <source type="image/webp" srcset="img/bmw-pirms-640.webp 640w, img/bmw-pirms-1000.webp 1000w, img/bmw-pirms-1564.webp 1564w" sizes="100vw">
+            <img src="img/bmw-pirms-1000.jpg" width="1564" height="1955" alt="BMW vadītāja puses grīda pirms tīrīšanas: paklājs, pedāļu zona un slieksnis klāti ar smiltīm un gružiem" fetchpriority="high" decoding="async">
+          </picture>
+          <span class="tag">Pirms</span>
+        </div>
+        <div class="reveal__layer reveal__layer--after">
+          <picture>
+            <source type="image/webp" srcset="img/bmw-pec-640.webp 640w, img/bmw-pec-1000.webp 1000w, img/bmw-pec-1564.webp 1564w" sizes="100vw">
+            <img src="img/bmw-pec-1000.jpg" width="1564" height="1955" alt="Tā pati BMW vadītāja puse pēc tīrīšanas: tīrs paklājs, pedāļu zona un slieksnis" decoding="async">
+          </picture>
+          <span class="tag">Pēc</span>
+        </div>
+        <button type="button" class="reveal__btn" aria-live="polite">
+          <span class="reveal__hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>Rādīt rezultātu</span></span>
+        </button>
+      </div>
+      <div class="hero__copy">
+        <div class="container">
           <h1 id="hero-title">Auto salona tīrīšana Cēsīs</h1>
           <p class="lead">Atsūti salona foto WhatsApp, un pateiksim cenu.</p>
           <p class="price"><span class="price__label">Salona tīrīšana</span> <span class="price__value">no 30&nbsp;€</span></p>
@@ -144,7 +141,7 @@
                 <p id="msg-preview">{{msg.main}}</p>
               </div>
               <a class="btn btn--wa btn--block" id="builder-send" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Sūtīt ziņu WhatsApp</span></a>
-              <p class="builder__note">Atvērsies WhatsApp ar šo ziņu. Pirms sūtīšanas vari to papildināt.</p>
+              <p class="builder__note">Atvērsies WhatsApp ar šo ziņu. Pirms sūtīšanas vari to papildināt. Nav WhatsApp? Zvani <a href="tel:{{tel}}">{{phoneDisplay}}</a>.</p>
             </div>
           </div>
         </form>
@@ -154,7 +151,7 @@
     <section class="section" id="uznemumiem" aria-labelledby="b2b-title">
       <div class="container b2b">
         <div>
-          <h2 id="b2b-title">Uzņēmumu autoparkiem</h2>
+          <h2 id="b2b-title">Auto tīrīšana uzņēmumu autoparkiem</h2>
           <p class="b2b__text">Tīrām uzņēmumu auto. Ja mašīnu ir vairākas vai tīrīšana notiek regulāri, piedāvāsim labāku cenu.</p>
         </div>
         <div class="b2b__action">
@@ -166,7 +163,7 @@
 
     <section class="section section--tint" id="darbi" aria-labelledby="darbi-title">
       <div class="container">
-        <h2 id="darbi-title">Mūsu darbi</h2>
+        <h2 id="darbi-title">Mūsu darbi: pirms un pēc</h2>
         <div class="works">
           <figure class="work">
             <div class="reveal" data-reveal>
@@ -206,24 +203,9 @@
 
     <section class="section" id="jautajumi" aria-labelledby="buj-title">
       <div class="container container--narrow">
-        <h2 id="buj-title">Biežākie jautājumi</h2>
+        <h2 id="buj-title">Jautājumi par auto salona tīrīšanu</h2>
         <div class="faq">
-          <details class="faq__item">
-            <summary><h3>Cik maksā auto salona tīrīšana?</h3></summary>
-            <p>Auto salona tīrīšana maksā no 30 €. Precīzu cenu tavam auto pateiksim WhatsApp.</p>
-          </details>
-          <details class="faq__item">
-            <summary><h3>Kā uzzināt ozonēšanas cenu?</h3></summary>
-            <p>Uzraksti mums WhatsApp, un pateiksim ozonēšanas cenu. Norādi auto modeli un kad pamanīji smaku.</p>
-          </details>
-          <details class="faq__item">
-            <summary><h3>Kā pieteikt vizīti?</h3></summary>
-            <p>Vizīti piesaki WhatsApp: spied „Pieteikt vizīti WhatsApp” vai raksti uz {{phoneDisplay}}.</p>
-          </details>
-          <details class="faq__item">
-            <summary><h3>Vai tīrāt uzņēmumu autoparkus?</h3></summary>
-            <p>Jā, tīrām uzņēmumu autoparkus. Vairākām mašīnām un regulārai tīrīšanai piedāvāsim labāku cenu, uzraksti mums WhatsApp.</p>
-          </details>
+{{faqHtml}}
         </div>
       </div>
     </section>
@@ -249,8 +231,9 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <p>© {{year}} {{businessName}} · {{address.street}}, {{address.city}}</p>
-      <p><a href="{{instagram}}" target="_blank" rel="noopener">Instagram</a></p>
+      <p class="site-footer__about"><span class="wordmark wordmark--ink" aria-hidden="true"><span class="wordmark__name">RichCars</span><span class="wordmark__sub">Detailing</span></span>
+        {{businessName}} Cēsīs: auto salona tīrīšana, ķīmiskā tīrīšana, interjera detailings un ozonēšana. Tīrām arī uzņēmumu autoparkus.</p>
+      <p>© {{year}} {{businessName}} · {{address.street}}, {{address.city}}, {{address.postalCode}} · <a href="tel:{{tel}}">{{phoneDisplay}}</a> · <a href="{{instagram}}" target="_blank" rel="noopener">Instagram</a></p>
     </div>
   </footer>
 

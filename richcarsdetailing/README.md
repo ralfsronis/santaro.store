@@ -13,7 +13,8 @@ Statiska vienas lapas mājaslapa (bez atkarībām). Gatavā versija ir mapē `di
 | Lapas teksti | `src/index.html` |
 | Fotogrāfijas | `src/img/` (`bmw-*` ievadā, `mercedes-*` sadaļā „Pirms un pēc”). Aizstājot saglabā tos pašus nosaukumus un 3:4 proporciju. |
 | Stils | `src/styles.css` |
-| Logo | `logo/` (SVG un PNG). Lapas galvenes zīmējums: `src/logo-inline.svg`, cilnes ikona: `src/favicon.svg` |
+| Uzraksts „RichCars Detailing” | Lapā tas ir teksts (`src/index.html`, klase `wordmark`). Faili sociālajiem tīkliem: `logo/` |
+| Biežākie jautājumi | `src/faq.json` (no šī faila top gan redzamās atbildes, gan Google strukturētie dati) |
 
 ## Būvēšana
 
