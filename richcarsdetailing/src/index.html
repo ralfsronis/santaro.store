@@ -7,7 +7,7 @@
   <meta name="description" content="Auto salona tīrīšana Cēsīs no 30 €. RichCarsDetailing piedāvā arī ķīmisko tīrīšanu, interjera deteilingu un ozonēšanu. Piesaki vizīti WhatsApp.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{siteUrl}}/">
-  <meta name="theme-color" content="#F6F3EE">
+  <meta name="theme-color" content="#141517">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="lv_LV">
@@ -26,7 +26,8 @@
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/manrope-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bodoni-moda-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/bodoni-moda-latin-ext-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>document.documentElement.classList.add("js")</script>
   <style>{{inlineCss}}</style>
@@ -53,163 +54,161 @@
   <main id="saturs">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero__grid">
-        <figure class="hero__media reveal-figure">
-          <div class="reveal" data-reveal>
-            <div class="reveal__layer">
-              <picture>
-                <source type="image/webp" srcset="img/bmw-pirms-640.webp 640w, img/bmw-pirms-1000.webp 1000w" sizes="(min-width: 1200px) 560px, (min-width: 900px) 46vw, calc(100vw - 32px)">
-                <img src="img/bmw-pirms-1000.jpg" width="1000" height="1250" alt="BMW vadītāja puses grīda pirms tīrīšanas: paklājs, pedāļu zona un slieksnis klāti ar smiltīm un gružiem" loading="eager" fetchpriority="high" decoding="async">
-              </picture>
-              <span class="tag">Pirms</span>
+        <figure class="hero__media">
+          <div class="frame">
+            <div class="reveal" data-reveal>
+              <div class="reveal__layer">
+                <picture>
+                  <source type="image/webp" srcset="img/bmw-pirms-640.webp 640w, img/bmw-pirms-1000.webp 1000w" sizes="(min-width: 1200px) 540px, (min-width: 900px) 44vw, calc(100vw - 32px)">
+                  <img src="img/bmw-pirms-1000.jpg" width="1000" height="1250" alt="BMW vadītāja puses grīda pirms tīrīšanas: paklājs, pedāļu zona un slieksnis klāti ar smiltīm un gružiem" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
+                <span class="tag">Pirms</span>
+              </div>
+              <div class="reveal__layer reveal__layer--after">
+                <picture>
+                  <source type="image/webp" srcset="img/bmw-pec-640.webp 640w, img/bmw-pec-1000.webp 1000w" sizes="(min-width: 1200px) 540px, (min-width: 900px) 44vw, calc(100vw - 32px)">
+                  <img src="img/bmw-pec-1000.jpg" width="1000" height="1250" alt="Tā pati BMW vadītāja puse pēc tīrīšanas: tīrs paklājs, pedāļu zona un slieksnis" loading="eager" decoding="async">
+                </picture>
+                <span class="tag">Pēc</span>
+              </div>
+              <button type="button" class="reveal__btn" aria-live="polite">
+                <span class="reveal__hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>Rādīt rezultātu</span></span>
+              </button>
             </div>
-            <div class="reveal__layer reveal__layer--after">
-              <picture>
-                <source type="image/webp" srcset="img/bmw-pec-640.webp 640w, img/bmw-pec-1000.webp 1000w" sizes="(min-width: 1200px) 560px, (min-width: 900px) 46vw, calc(100vw - 32px)">
-                <img src="img/bmw-pec-1000.jpg" width="1000" height="1250" alt="Tā pati BMW vadītāja puse pēc tīrīšanas: tīrs paklājs, pedāļu zona un slieksnis" loading="eager" decoding="async">
-              </picture>
-              <span class="tag tag--light">Pēc</span>
-            </div>
-            <button type="button" class="reveal__btn" aria-live="polite">
-              <span class="reveal__hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>Rādīt rezultātu</span></span>
-            </button>
           </div>
         </figure>
 
         <div class="hero__copy">
-          <h1 id="hero-title" class="enter">Auto salona tīrīšana <span class="scribble">Cēsīs<svg class="scribble__line" viewBox="0 0 120 18" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 10C30 4 72 2 117 6"/><path pathLength="1" d="M16 15c28-4 58-5 90-3"/></svg></span></h1>
-          <ul class="wins" role="list">
-            <li class="enter"><svg class="check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path pathLength="1" d="M4.5 12.5c1.6 1.4 3 3 4.2 4.8C11.3 11.6 15 7.2 19.8 4.2"/></svg>Tīrs un svaigs salons</li>
-            <li class="enter"><svg class="check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path pathLength="1" d="M4.5 12.5c1.6 1.4 3 3 4.2 4.8C11.3 11.6 15 7.2 19.8 4.2"/></svg>Atsūti foto, uzzini cenu</li>
-            <li class="enter"><svg class="check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path pathLength="1" d="M4.5 12.5c1.6 1.4 3 3 4.2 4.8C11.3 11.6 15 7.2 19.8 4.2"/></svg>Pieteikšanās 1 minūtē</li>
-          </ul>
+          <p class="eyebrow enter">Cēsis · Auto salona kopšana</p>
+          <h1 id="hero-title"><span class="line"><span>Auto salona</span></span> <span class="line"><span>tīrīšana <em>Cēsīs</em></span></span></h1>
+          <span class="stitch" aria-hidden="true"></span>
+          <p class="lead enter">Atsūti salona foto, un pateiksim cenu. Pieteikšanās WhatsApp aizņem minūti.</p>
           <div class="offer enter">
-            <p class="price-row">
-              <span class="price-row__label">Salona tīrīšana</span>
-              <strong class="price-row__value"><span class="price-row__from">no</span> 30&nbsp;€</strong>
+            <p class="price">
+              <span class="price__label">Salona tīrīšana</span>
+              <span class="price__value"><span class="price__from">no</span> 30&nbsp;€</span>
             </p>
-            <div class="cta">
-              <div class="cta__row">
-                <a class="btn btn--wa btn--lg" id="hero-cta" href="{{wa.main}}" target="_blank" rel="noopener">
-                  {{waIcon}}
-                  <span>Pieteikt vizīti WhatsApp</span>
-                </a>
-                {{handArrow}}
-              </div>
-              <p class="cta__note">Atver WhatsApp un vienosimies par cenu un laiku.</p>
-            </div>
+            <a class="btn btn--wa btn--lg" id="hero-cta" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikt vizīti WhatsApp</span></a>
+            <p class="cta__note">Atver WhatsApp un vienosimies par cenu un laiku.</p>
           </div>
         </div>
       </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track"><div class="marquee__group"><span>Salona tīrīšana</span><span class="marquee__dot" aria-hidden="true">◆</span><span>Ķīmiskā tīrīšana</span><span class="marquee__dot" aria-hidden="true">◆</span><span>Interjera detailings</span><span class="marquee__dot" aria-hidden="true">◆</span><span>Ozonēšana</span><span class="marquee__dot" aria-hidden="true">◆</span><span>Cēsis</span><span class="marquee__dot" aria-hidden="true">◆</span></div><div class="marquee__group"><span>Salona tīrīšana</span><span class="marquee__dot" aria-hidden="true">◆</span><span>Ķīmiskā tīrīšana</span><span class="marquee__dot" aria-hidden="true">◆</span><span>Interjera detailings</span><span class="marquee__dot" aria-hidden="true">◆</span><span>Ozonēšana</span><span class="marquee__dot" aria-hidden="true">◆</span><span>Cēsis</span><span class="marquee__dot" aria-hidden="true">◆</span></div></div>
+      </div>
     </section>
 
-    <section class="flow-strip" aria-labelledby="flow-title">
+    <section class="section steps" aria-labelledby="steps-title">
       <div class="container">
-        <h2 id="flow-title" class="flow-strip__title">3 soļi līdz tīram salonam</h2>
-        <ol class="flow sr" role="list">
-          <li><a href="#pakalpojumi"><span class="flow__n">1</span><span class="flow__t">Izvēlies pakalpojumu</span></a></li>
-          <li><a href="{{wa.main}}" target="_blank" rel="noopener"><span class="flow__n">2</span><span class="flow__t">Uzraksti WhatsApp</span></a></li>
-          <li><a href="#kontakti"><span class="flow__n">3</span><span class="flow__t">Atbrauc uz Cēsīm</span></a></li>
+        <header class="section__head sr">
+          <p class="kicker">Kā tas notiek</p>
+          <h2 id="steps-title">Trīs soļi līdz tīram salonam</h2>
+        </header>
+        <ol class="steps__list sr" role="list">
+          <li><a href="#pakalpojumi"><span class="steps__n">I</span><span class="steps__t">Izvēlies pakalpojumu</span></a></li>
+          <li><a href="{{wa.main}}" target="_blank" rel="noopener"><span class="steps__n">II</span><span class="steps__t">Uzraksti WhatsApp</span></a></li>
+          <li><a href="#kontakti"><span class="steps__n">III</span><span class="steps__t">Atbrauc uz Cēsīm</span></a></li>
         </ol>
       </div>
     </section>
 
-    <section class="section" id="pakalpojumi" aria-labelledby="pakalpojumi-title">
+    <section class="section section--paper2" id="pakalpojumi" aria-labelledby="pakalpojumi-title">
       <div class="container">
         <header class="section__head sr">
-          <p class="step-label"><span>1</span> solis</p>
+          <p class="kicker">Pakalpojumi</p>
           <h2 id="pakalpojumi-title">Ko vēlies sakopt?</h2>
         </header>
         <div class="picker sr" data-picker>
           <div class="picker__tabs" role="tablist" aria-label="Pakalpojumi">
-            <button type="button" class="picker__tab" role="tab" id="tab-salons" aria-controls="panel-salons" aria-selected="true" tabindex="0">
-              <span class="picker__icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 15.5h16M6 15.5l1.4-5.2A2 2 0 0 1 9.3 8.8h5.4a2 2 0 0 1 1.9 1.5l1.4 5.2M6.5 15.5v2.5M17.5 15.5v2.5M8 4.5l.6 1.4M12 3.5v1.6M16 4.5l-.6 1.4"/></svg></span><span>Salona tīrīšana</span>
-            </button>
-            <button type="button" class="picker__tab" role="tab" id="tab-kimiska" aria-controls="panel-kimiska" aria-selected="false" tabindex="-1">
-              <span class="picker__icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3.5s6 6.4 6 10.6a6 6 0 0 1-12 0c0-4.2 6-10.6 6-10.6Z"/></svg></span><span>Ķīmiskā tīrīšana</span>
-            </button>
-            <button type="button" class="picker__tab" role="tab" id="tab-detailings" aria-controls="panel-detailings" aria-selected="false" tabindex="-1">
-              <span class="picker__icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M11 3.5 12.9 9 18.5 11 12.9 13 11 18.5 9.1 13 3.5 11 9.1 9Z M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8Z"/></svg></span><span>Interjera detailings</span>
-            </button>
-            <button type="button" class="picker__tab" role="tab" id="tab-ozonesana" aria-controls="panel-ozonesana" aria-selected="false" tabindex="-1">
-              <span class="picker__icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 8.5h10.5a3 3 0 1 0-3-3M3 12.5h15a3 3 0 1 1-3 3M3 16.5h7"/></svg></span><span>Ozonēšana</span>
-            </button>
+            <span class="picker__indicator" aria-hidden="true"></span>
+              <button type="button" class="picker__tab" role="tab" id="tab-salons" aria-controls="panel-salons" aria-selected="true" tabindex="0">Salona tīrīšana</button>
+              <button type="button" class="picker__tab" role="tab" id="tab-kimiska" aria-controls="panel-kimiska" aria-selected="false" tabindex="-1">Ķīmiskā tīrīšana</button>
+              <button type="button" class="picker__tab" role="tab" id="tab-detailings" aria-controls="panel-detailings" aria-selected="false" tabindex="-1">Interjera detailings</button>
+              <button type="button" class="picker__tab" role="tab" id="tab-ozonesana" aria-controls="panel-ozonesana" aria-selected="false" tabindex="-1">Ozonēšana</button>
           </div>
           <div class="picker__panels">
-          <div class="picker__panel" role="tabpanel" id="panel-salons" aria-labelledby="tab-salons">
-            <h3>Salona tīrīšana</h3>
-            <p>Putekļi un netīrumi salonā? Sāc ar šo.</p>
-            <p class="picker__price"><strong>no 30&nbsp;€</strong></p>
-            <a class="btn btn--wa" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikt salona tīrīšanu</span></a>
-          </div>
-          <div class="picker__panel" role="tabpanel" id="panel-kimiska" aria-labelledby="tab-kimiska">
-            <h3>Ķīmiskā tīrīšana</h3>
-            <p>Traipi uz sēdekļiem vai paklājiem. Atsūti foto.</p>
-            <p class="picker__price">Cenu pateiksim WhatsApp</p>
-            <a class="btn btn--wa" href="{{wa.kimiska}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt par ķīmisko tīrīšanu</span></a>
-          </div>
-          <div class="picker__panel" role="tabpanel" id="panel-detailings" aria-labelledby="tab-detailings">
-            <h3>Interjera detailings</h3>
-            <p>Šuves, spraugas un grūti aizsniedzamas vietas.</p>
-            <p class="picker__price">Cenu pateiksim WhatsApp</p>
-            <a class="btn btn--wa" href="{{wa.detailings}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt par detailingu</span></a>
-          </div>
-          <div class="picker__panel" role="tabpanel" id="panel-ozonesana" aria-labelledby="tab-ozonesana">
-            <h3>Ozonēšana</h3>
-            <p>Palīdz tikt vaļā no nepatīkamām un spēcīgām smakām.</p>
-            <p class="picker__price">Cenu pateiksim WhatsApp</p>
-            <a class="btn btn--wa" href="{{wa.ozonesana}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt par ozonēšanu</span></a>
-          </div>
+            <div class="picker__panel" role="tabpanel" id="panel-salons" aria-labelledby="tab-salons">
+              <h3>Salona tīrīšana</h3>
+              <p>Putekļi un netīrumi salonā. Labākais sākums.</p>
+              <p class="panel__price"><span class="panel__from">no</span> 30&nbsp;€</p>
+              <a class="btn btn--wa" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikt salona tīrīšanu</span></a>
+            </div>
+            <div class="picker__panel" role="tabpanel" id="panel-kimiska" aria-labelledby="tab-kimiska">
+              <h3>Ķīmiskā tīrīšana</h3>
+              <p>Traipi uz sēdekļiem vai paklājiem. Atsūti foto, un pateiksim cenu.</p>
+              <p class="panel__price panel__price--note">Cenu pateiksim pēc foto</p>
+              <a class="btn btn--wa" href="{{wa.kimiska}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt cenu WhatsApp</span></a>
+            </div>
+            <div class="picker__panel" role="tabpanel" id="panel-detailings" aria-labelledby="tab-detailings">
+              <h3>Interjera detailings</h3>
+              <p>Šuves, spraugas un grūti aizsniedzamas vietas.</p>
+              <p class="panel__price panel__price--note">Cenu pateiksim WhatsApp</p>
+              <a class="btn btn--wa" href="{{wa.detailings}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt cenu WhatsApp</span></a>
+            </div>
+            <div class="picker__panel" role="tabpanel" id="panel-ozonesana" aria-labelledby="tab-ozonesana">
+              <h3>Ozonēšana</h3>
+              <p>Palīdz tikt vaļā no nepatīkamām un spēcīgām smakām.</p>
+              <p class="panel__price panel__price--note">Cenu pateiksim WhatsApp</p>
+              <a class="btn btn--wa" href="{{wa.ozonesana}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt cenu WhatsApp</span></a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--tint" id="darbi" aria-labelledby="darbi-title">
+    <section class="section section--night" id="darbi" aria-labelledby="darbi-title">
       <div class="container">
         <header class="section__head section__head--center sr">
+          <p class="kicker">Rezultāti</p>
           <h2 id="darbi-title">Mūsu darbi</h2>
         </header>
         <div class="proof">
-          <figure class="reveal-figure sr">
-            <div class="reveal" data-reveal>
-            <div class="reveal__layer">
-              <picture>
-                <source type="image/webp" srcset="img/mercedes-pirms-640.webp 640w, img/mercedes-pirms-1000.webp 1000w" sizes="(min-width: 900px) 520px, calc(100vw - 32px)">
-                <img src="img/mercedes-pirms-1000.jpg" width="1000" height="1250" alt="Mercedes-Benz vadītāja puse pirms tīrīšanas: uz grīdas un sliekšņa smiltis un gruži" loading="lazy" decoding="async">
-              </picture>
-              <span class="tag">Pirms</span>
+          <figure class="proof__item sr">
+            <div class="frame">
+              <div class="reveal" data-reveal>
+              <div class="reveal__layer">
+                <picture>
+                  <source type="image/webp" srcset="img/mercedes-pirms-640.webp 640w, img/mercedes-pirms-1000.webp 1000w" sizes="(min-width: 900px) 500px, calc(100vw - 32px)">
+                  <img src="img/mercedes-pirms-1000.jpg" width="1000" height="1250" alt="Mercedes-Benz vadītāja puse pirms tīrīšanas: uz grīdas un sliekšņa smiltis un gruži" loading="lazy" decoding="async">
+                </picture>
+                <span class="tag">Pirms</span>
+              </div>
+              <div class="reveal__layer reveal__layer--after">
+                <picture>
+                  <source type="image/webp" srcset="img/mercedes-pec-640.webp 640w, img/mercedes-pec-1000.webp 1000w" sizes="(min-width: 900px) 500px, calc(100vw - 32px)">
+                  <img src="img/mercedes-pec-1000.jpg" width="1000" height="1250" alt="Tā pati Mercedes-Benz vadītāja puse pēc tīrīšanas: tīra grīda un slieksnis" loading="lazy" decoding="async">
+                </picture>
+                <span class="tag">Pēc</span>
+              </div>
+              <button type="button" class="reveal__btn" aria-live="polite">
+                <span class="reveal__hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>Rādīt rezultātu</span></span>
+              </button>
             </div>
-            <div class="reveal__layer reveal__layer--after">
-              <picture>
-                <source type="image/webp" srcset="img/mercedes-pec-640.webp 640w, img/mercedes-pec-1000.webp 1000w" sizes="(min-width: 900px) 520px, calc(100vw - 32px)">
-                <img src="img/mercedes-pec-1000.jpg" width="1000" height="1250" alt="Tā pati Mercedes-Benz vadītāja puse pēc tīrīšanas: tīra grīda un slieksnis" loading="lazy" decoding="async">
-              </picture>
-              <span class="tag tag--light">Pēc</span>
             </div>
-            <button type="button" class="reveal__btn" aria-live="polite">
-              <span class="reveal__hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>Rādīt rezultātu</span></span>
-            </button>
-          </div>
             <figcaption>Mercedes-Benz · vadītāja puse</figcaption>
           </figure>
-          <figure class="proof__photo sr">
-            <div class="proof__frame">
-              <picture>
-                <source type="image/webp" srcset="img/ozonesana-640.webp 640w, img/ozonesana-1000.webp 1000w" sizes="(min-width: 900px) 520px, calc(100vw - 32px)">
-                <img src="img/ozonesana-1000.jpg" width="1000" height="1011" alt="Ozona ģenerators darbā BMW salonā ar gaišiem ādas sēdekļiem" loading="lazy" decoding="async">
-              </picture>
-              <span class="tag tag--light">Ozonēšana darbā</span>
+          <figure class="proof__item sr">
+            <div class="frame">
+              <div class="proof__photo">
+                <picture>
+                  <source type="image/webp" srcset="img/ozonesana-640.webp 640w, img/ozonesana-1000.webp 1000w" sizes="(min-width: 900px) 500px, calc(100vw - 32px)">
+                  <img src="img/ozonesana-1000.jpg" width="1000" height="1011" alt="Ozona ģenerators darbā BMW salonā ar gaišiem ādas sēdekļiem" loading="lazy" decoding="async">
+                </picture>
+                <span class="tag">Ozonēšana</span>
+              </div>
             </div>
             <figcaption>BMW · salona ozonēšana</figcaption>
           </figure>
         </div>
-        <p class="proof__more sr"><a href="{{instagram}}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg><span>Vairāk darbu Instagram</span></a></p>
+        <p class="proof__more sr"><a href="{{instagram}}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg><span>Vairāk darbu Instagram</span></a></p>
       </div>
     </section>
 
     <section class="section" id="jautajumi" aria-labelledby="buj-title">
       <div class="container container--narrow">
         <header class="section__head sr">
+          <p class="kicker">Jautājumi</p>
           <h2 id="buj-title">Biežākie jautājumi</h2>
         </header>
         <div class="faq sr">
@@ -229,27 +228,21 @@
       </div>
     </section>
 
-    <section class="section section--dark" id="kontakti" aria-labelledby="kontakti-title">
+    <section class="section section--night" id="kontakti" aria-labelledby="kontakti-title">
       <div class="container location">
         <div class="sr">
-          <p class="step-label step-label--dark"><span>3</span> solis</p>
+          <p class="kicker">Atrašanās vieta</p>
           <h2 id="kontakti-title">Kur mūs atrast Cēsīs?</h2>
           <address class="location__address">
-            <strong>{{businessName}}</strong><br>
+            {{businessName}}<br>
             {{address.street}}, {{address.city}}, {{address.postalCode}}
           </address>
           <p class="location__note">Par vizītes laiku vienojamies WhatsApp.</p>
         </div>
         <div class="location__actions sr">
-          <a class="btn btn--light" href="{{mapsUrl}}" target="_blank" rel="noopener">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-            <span>Saņemt norādes</span>
-          </a>
-          <a class="btn btn--wa" href="{{wa.main}}" target="_blank" rel="noopener">
-            {{waIcon}}
-            <span>Pieteikt vizīti WhatsApp</span>
-          </a>
-          <p class="location__links"><a href="tel:{{tel}}">{{phoneDisplay}}</a><a href="{{instagram}}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg><span>@richcarsdetailing</span></a></p>
+          <a class="btn btn--line" href="{{mapsUrl}}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-6.5-6.4-6.5-11.5a6.5 6.5 0 0 1 13 0C18.5 14.6 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Saņemt norādes</span></a>
+          <a class="btn btn--wa" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikt vizīti WhatsApp</span></a>
+          <p class="location__links"><a href="tel:{{tel}}">{{phoneDisplay}}</a><a href="{{instagram}}" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg><span>@richcarsdetailing</span></a></p>
         </div>
       </div>
     </section>
@@ -257,16 +250,13 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <p><strong>{{businessName}}</strong> · salona tīrīšana, ķīmiskā tīrīšana, interjera detailings un ozonēšana Cēsīs</p>
+      <p>{{businessName}} · salona tīrīšana, ķīmiskā tīrīšana, interjera detailings un ozonēšana Cēsīs</p>
       <p class="site-footer__small">© {{year}} {{businessName}} · {{address.street}}, {{address.city}} · <a href="{{instagram}}" target="_blank" rel="noopener">Instagram</a></p>
     </div>
   </footer>
 
   <div class="sticky-cta" id="sticky-cta" data-visible="false" inert>
-    <a class="btn btn--wa btn--block" href="{{wa.main}}" target="_blank" rel="noopener">
-      {{waIcon}}
-      <span>Pieteikt vizīti WhatsApp</span>
-    </a>
+    <a class="btn btn--wa btn--block" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikt vizīti WhatsApp</span></a>
   </div>
 
   <script>{{inlineJs}}</script>
