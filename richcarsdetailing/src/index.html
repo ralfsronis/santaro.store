@@ -28,6 +28,7 @@
   <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/manrope-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
+  <script>document.documentElement.classList.add("js")</script>
   <style>{{inlineCss}}</style>
 
   <script type="application/ld+json">{{jsonLd}}</script>
@@ -75,24 +76,30 @@
           <a class="link-arrow" href="#pakalpojumi">Skatīt pakalpojumus <span aria-hidden="true">↓</span></a>
         </div>
 
-        <figure class="hero__media">
-          <div class="compare">
-            <div class="compare__item">
+        <figure class="hero__media reveal-figure">
+          <div class="reveal" data-reveal>
+            <div class="reveal__layer">
               <picture>
-                <source type="image/webp" srcset="img/bmw-pirms-480.webp 480w, img/bmw-pirms-800.webp 800w" sizes="(min-width: 1200px) 270px, (min-width: 900px) 23vw, 46vw">
-                <img src="img/bmw-pirms-800.jpg" width="800" height="1067" alt="BMW vadītāja puses grīda pirms tīrīšanas: paklājs un slieksnis klāti ar smiltīm un gružiem" loading="eager" decoding="async">
+                <source type="image/webp" srcset="img/bmw-pirms-640.webp 640w, img/bmw-pirms-1000.webp 1000w" sizes="(min-width: 1200px) 520px, (min-width: 900px) 44vw, calc(100vw - 32px)">
+                <img src="img/bmw-pirms-1000.jpg" width="1000" height="1250" alt="BMW vadītāja puses grīda pirms tīrīšanas: paklājs, pedāļu zona un slieksnis klāti ar smiltīm un gružiem" loading="eager" fetchpriority="high" decoding="async">
               </picture>
               <span class="tag">Pirms</span>
             </div>
-            <div class="compare__item">
+            <div class="reveal__layer reveal__layer--after">
               <picture>
-                <source type="image/webp" srcset="img/bmw-pec-480.webp 480w, img/bmw-pec-800.webp 800w" sizes="(min-width: 1200px) 270px, (min-width: 900px) 23vw, 46vw">
-                <img src="img/bmw-pec-800.jpg" width="800" height="1067" alt="Tā pati BMW vadītāja puse pēc tīrīšanas: tīrs paklājs, pedāļu zona un slieksnis" loading="eager" fetchpriority="high" decoding="async">
+                <source type="image/webp" srcset="img/bmw-pec-640.webp 640w, img/bmw-pec-1000.webp 1000w" sizes="(min-width: 1200px) 520px, (min-width: 900px) 44vw, calc(100vw - 32px)">
+                <img src="img/bmw-pec-1000.jpg" width="1000" height="1250" alt="Tā pati BMW vadītāja puse pēc tīrīšanas: tīrs paklājs, pedāļu zona un slieksnis" loading="eager" decoding="async">
               </picture>
               <span class="tag tag--light">Pēc</span>
             </div>
+            <button type="button" class="reveal__btn" aria-live="polite">
+              <span class="reveal__hint">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg>
+                <span>Rādīt rezultātu</span>
+              </span>
+            </button>
           </div>
-          <figcaption>BMW vadītāja puse pirms un pēc salona tīrīšanas. Smiltis un gruži notīrīti no paklāja, pedāļu zonas un sliekšņa.</figcaption>
+          <figcaption>BMW vadītāja puse. Spied uz bildes, lai salīdzinātu pirms un pēc: smiltis un gruži notīrīti no paklāja, pedāļu zonas un sliekšņa.</figcaption>
         </figure>
       </div>
     </section>
@@ -142,25 +149,31 @@
       <div class="container">
         <header class="section__head">
           <h2 id="darbi-title">Pirms un pēc: mūsu darbs</h2>
-          <p>Viens auto, viena vieta, pirms un pēc tīrīšanas. Fotogrāfijas no RichCarsDetailing darbnīcas.</p>
+          <p>Viens auto, viens skats, pirms un pēc tīrīšanas. Spied uz bildes, lai redzētu rezultātu.</p>
         </header>
 
-        <figure class="work">
-          <div class="compare compare--wide">
-            <div class="compare__item">
+        <figure class="work reveal-figure">
+          <div class="reveal" data-reveal>
+            <div class="reveal__layer">
               <picture>
-                <source type="image/webp" srcset="img/mercedes-pirms-480.webp 480w, img/mercedes-pirms-800.webp 800w" sizes="(min-width: 960px) 440px, 46vw">
-                <img src="img/mercedes-pirms-800.jpg" width="800" height="1067" alt="Mercedes-Benz vadītāja puse pirms tīrīšanas: uz grīdas un sliekšņa smiltis un gruži" loading="lazy" decoding="async">
+                <source type="image/webp" srcset="img/mercedes-pirms-640.webp 640w, img/mercedes-pirms-1000.webp 1000w" sizes="(min-width: 600px) 520px, calc(100vw - 32px)">
+                <img src="img/mercedes-pirms-1000.jpg" width="1000" height="1250" alt="Mercedes-Benz vadītāja puse pirms tīrīšanas: uz grīdas un sliekšņa smiltis un gruži" loading="lazy" decoding="async">
               </picture>
               <span class="tag">Pirms</span>
             </div>
-            <div class="compare__item">
+            <div class="reveal__layer reveal__layer--after">
               <picture>
-                <source type="image/webp" srcset="img/mercedes-pec-480.webp 480w, img/mercedes-pec-800.webp 800w" sizes="(min-width: 960px) 440px, 46vw">
-                <img src="img/mercedes-pec-800.jpg" width="800" height="1067" alt="Tā pati Mercedes-Benz vadītāja puse pēc tīrīšanas: tīra grīda un slieksnis" loading="lazy" decoding="async">
+                <source type="image/webp" srcset="img/mercedes-pec-640.webp 640w, img/mercedes-pec-1000.webp 1000w" sizes="(min-width: 600px) 520px, calc(100vw - 32px)">
+                <img src="img/mercedes-pec-1000.jpg" width="1000" height="1250" alt="Tā pati Mercedes-Benz vadītāja puse pēc tīrīšanas: tīra grīda un slieksnis" loading="lazy" decoding="async">
               </picture>
               <span class="tag tag--light">Pēc</span>
             </div>
+            <button type="button" class="reveal__btn" aria-live="polite">
+              <span class="reveal__hint">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg>
+                <span>Rādīt rezultātu</span>
+              </span>
+            </button>
           </div>
           <figcaption>Mercedes-Benz vadītāja puse. No grīdas, pedāļu zonas un sliekšņa notīrītas smiltis un gruži.</figcaption>
         </figure>

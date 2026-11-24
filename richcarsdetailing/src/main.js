@@ -34,3 +34,16 @@
   });
   guarded.forEach(function (el) { guardObserver.observe(el); });
 })();
+
+// Before/after: tap or click the photo to wipe in the result, again to go back.
+(function () {
+  document.querySelectorAll("[data-reveal]").forEach(function (box) {
+    var btn = box.querySelector(".reveal__btn");
+    var label = btn.querySelector(".reveal__hint span");
+    btn.addEventListener("click", function () {
+      var showAfter = box.dataset.state !== "after";
+      box.dataset.state = showAfter ? "after" : "before";
+      label.textContent = showAfter ? "Rādīt, kā bija" : "Rādīt rezultātu";
+    });
+  });
+})();
