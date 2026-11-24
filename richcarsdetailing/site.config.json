@@ -15,6 +15,7 @@
     "main": "Sveiki! Vēlos pieteikt auto salona tīrīšanu Cēsīs. Mans auto ir ____. Kad ir tuvākais pieejamais laiks?",
     "kimiska": "Sveiki! Interesē salona ķīmiskā tīrīšana. Mans auto ir ____. Pievienošu traipu foto. Kāda būtu cena un kad varētu atbraukt?",
     "detailings": "Sveiki! Interesē interjera detailings. Mans auto ir ____. Kāda būtu cena un kad varētu atbraukt?",
-    "ozonesana": "Sveiki! Interesē salona ozonēšana. Mans auto ir ____. Kāda būtu cena un kad varētu atbraukt?"
+    "ozonesana": "Sveiki! Interesē salona ozonēšana. Mans auto ir ____. Kāda būtu cena un kad varētu atbraukt?",
+    "autoparks": "Sveiki! Interesē regulāra auto tīrīšana uzņēmuma autoparkam. Mums ir ____ auto. Kāda būtu cena?"
   }
 }

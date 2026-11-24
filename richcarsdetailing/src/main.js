@@ -10,6 +10,37 @@
     onScroll();
   }
 
+  // Message builder: pick a service, type the car, see the exact message, send it in WhatsApp.
+  // The number lives in site.config.json and reaches the page through data-wa.
+  var form = document.getElementById("builder");
+  if (form) {
+    var number = form.getAttribute("data-wa");
+    var car = document.getElementById("car");
+    var carLabel = document.getElementById("car-label");
+    var preview = document.getElementById("msg-preview");
+    var bubble = preview.parentNode;
+    var send = document.getElementById("builder-send");
+    var radios = form.querySelectorAll('input[name="service"]');
+    var build = function (flash) {
+      var chosen = form.querySelector('input[name="service"]:checked') || radios[0];
+      carLabel.textContent = chosen.getAttribute("data-ask");
+      car.placeholder = chosen.getAttribute("data-ph");
+      var value = car.value.trim();
+      var text = chosen.getAttribute("data-msg").replace("____", value || "____");
+      preview.textContent = text;
+      send.href = "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
+      if (flash && !reduce) {
+        bubble.classList.remove("is-updated");
+        void bubble.offsetWidth;
+        bubble.classList.add("is-updated");
+      }
+    };
+    radios.forEach(function (r) { r.addEventListener("change", function () { build(true); }); });
+    car.addEventListener("input", function () { build(false); });
+    form.addEventListener("submit", function (e) { e.preventDefault(); send.click(); });
+    build(false);
+  }
+
   // Before/after: tap or click to wipe in the result, again to go back.
   // The first time a photo comes into view it peeks at the result once.
   document.querySelectorAll("[data-reveal]").forEach(function (box) {
@@ -60,7 +91,7 @@
   });
 
   // Phone: compact WhatsApp bar after the hero button scrolls away,
-  // hidden again over the contacts and footer so it never covers them.
+  // hidden over the message builder (it has its own send button) and over contacts and footer.
   var bar = document.getElementById("sticky-cta");
   var heroCta = document.getElementById("hero-cta");
   if (bar && heroCta && io) {
@@ -79,6 +110,6 @@
       entries.forEach(function (e) { if (e.isIntersecting) guarded.add(e.target); else guarded.delete(e.target); });
       update();
     });
-    document.querySelectorAll("#kontakti, .site-footer").forEach(function (el) { g.observe(el); });
+    document.querySelectorAll("#pakalpojumi, #kontakti, .site-footer").forEach(function (el) { g.observe(el); });
   }
 })();

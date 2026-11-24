@@ -58,6 +58,7 @@ const jsonLd = {
       service("Salona ķīmiskā tīrīšana"),
       service("Interjera detailings"),
       service("Salona ozonēšana"),
+      service("Uzņēmumu autoparku tīrīšana"),
     ],
   },
 };
@@ -76,6 +77,8 @@ const ctx = {
   address: a,
   waIcon,
   instagram: cfg.instagram,
+  waNumber: cfg.whatsappNumber,
+  msg: cfg.whatsappMessages,
   logoSvg: read("logo-inline.svg").trim(),
   year: String(new Date().getFullYear()),
   inlineCss: minifyCss(read("styles.css")),

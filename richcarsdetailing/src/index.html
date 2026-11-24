@@ -38,18 +38,16 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="#" aria-label="RichCarsDetailing, uz lapas sākumu">
-        {{logoSvg}}
-        <span class="brand__text" aria-hidden="true"><span class="brand__name">RichCars</span><span class="brand__sub">detailing</span></span>
-      </a>
+      <p class="site-header__place">{{address.street}}, {{address.city}}</p>
       <nav aria-label="Galvenā navigācija">
         <ul class="nav">
-          <li class="nav__hide-sm"><a href="#pakalpojumi">Pakalpojumi</a></li>
-          <li class="nav__hide-sm"><a href="#darbi">Darbi</a></li>
+          <li><a href="#pakalpojumi">Pakalpojumi</a></li>
+          <li><a href="#uznemumiem">Uzņēmumiem</a></li>
+          <li><a href="#darbi">Darbi</a></li>
           <li><a href="#kontakti">Kontakti</a></li>
         </ul>
       </nav>
-      <a class="btn btn--wa btn--sm header-cta" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikties</span></a>
+      <a class="btn btn--wa btn--sm" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikties</span></a>
     </div>
   </header>
 
@@ -60,18 +58,19 @@
           <div class="reveal" data-reveal>
             <div class="reveal__layer">
               <picture>
-                <source type="image/webp" srcset="img/bmw-pirms-640.webp 640w, img/bmw-pirms-1000.webp 1000w" sizes="(min-width: 1200px) 520px, (min-width: 900px) 44vw, calc(100vw - 32px)">
+                <source type="image/webp" srcset="img/bmw-pirms-640.webp 640w, img/bmw-pirms-1000.webp 1000w" sizes="(min-width: 1200px) 520px, (min-width: 900px) 44vw, 100vw">
                 <img src="img/bmw-pirms-1000.jpg" width="1000" height="1250" alt="BMW vadītāja puses grīda pirms tīrīšanas: paklājs, pedāļu zona un slieksnis klāti ar smiltīm un gružiem" loading="eager" fetchpriority="high" decoding="async">
               </picture>
               <span class="tag">Pirms</span>
             </div>
             <div class="reveal__layer reveal__layer--after">
               <picture>
-                <source type="image/webp" srcset="img/bmw-pec-640.webp 640w, img/bmw-pec-1000.webp 1000w" sizes="(min-width: 1200px) 520px, (min-width: 900px) 44vw, calc(100vw - 32px)">
+                <source type="image/webp" srcset="img/bmw-pec-640.webp 640w, img/bmw-pec-1000.webp 1000w" sizes="(min-width: 1200px) 520px, (min-width: 900px) 44vw, 100vw">
                 <img src="img/bmw-pec-1000.jpg" width="1000" height="1250" alt="Tā pati BMW vadītāja puse pēc tīrīšanas: tīrs paklājs, pedāļu zona un slieksnis" loading="eager" decoding="async">
               </picture>
               <span class="tag">Pēc</span>
             </div>
+            <span class="photo-logo" role="img" aria-label="RichCarsDetailing">{{logoSvg}}</span>
             <button type="button" class="reveal__btn" aria-live="polite">
               <span class="reveal__hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/></svg><span>Rādīt rezultātu</span></span>
             </button>
@@ -81,45 +80,87 @@
           <h1 id="hero-title">Auto salona tīrīšana Cēsīs</h1>
           <p class="lead">Atsūti salona foto WhatsApp, un pateiksim cenu.</p>
           <p class="price"><span class="price__label">Salona tīrīšana</span> <span class="price__value">no 30&nbsp;€</span></p>
-          <a class="btn btn--wa btn--lg" id="hero-cta" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikt vizīti WhatsApp</span></a>
-          <p class="cta__note">Atver WhatsApp un vienosimies par cenu un laiku.</p>
+          <div class="hero__actions">
+            <a class="btn btn--wa btn--lg" id="hero-cta" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikt vizīti WhatsApp</span></a>
+            <a class="hero__more" href="#pakalpojumi">Sastādīt ziņu pa soļiem <span aria-hidden="true">↓</span></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="pakalpojumi" aria-labelledby="pakalpojumi-title">
+    <section class="section section--tint" id="pakalpojumi" aria-labelledby="pakalpojumi-title">
       <div class="container">
         <h2 id="pakalpojumi-title">Ko vēlies sakopt?</h2>
-        <ul class="services" role="list">
-          <li class="service">
-            <div class="service__top">
-              <h3>Salona tīrīšana</h3><p class="service__price">no 30&nbsp;€</p>
+        <p class="section__intro">Izvēlies pakalpojumu, un mēs sagatavosim ziņu. Tev atliks to nosūtīt WhatsApp.</p>
+        <form class="builder" id="builder" data-wa="{{waNumber}}">
+          <fieldset class="builder__step">
+            <legend><span class="step-n">1</span> Izvēlies pakalpojumu</legend>
+            <div class="opts">
+              <label class="opt">
+                <input type="radio" name="service" value="main" data-msg="{{msg.main}}" data-ask="Tavs auto" data-ph="piem., VW Passat" checked>
+                <span class="opt__body">
+                  <span class="opt__top"><span class="opt__name">Salona tīrīšana</span><span class="opt__price">no 30&nbsp;€</span></span>
+                  <span class="opt__desc">Putekļi, gruži un netīrumi salonā.</span>
+                </span>
+              </label>
+              <label class="opt">
+                <input type="radio" name="service" value="kimiska" data-msg="{{msg.kimiska}}" data-ask="Tavs auto" data-ph="piem., VW Passat">
+                <span class="opt__body">
+                  <span class="opt__top"><span class="opt__name">Ķīmiskā tīrīšana</span></span>
+                  <span class="opt__desc">Traipi uz sēdekļiem vai paklājiem. Pēc tam atsūti foto.</span>
+                </span>
+              </label>
+              <label class="opt">
+                <input type="radio" name="service" value="detailings" data-msg="{{msg.detailings}}" data-ask="Tavs auto" data-ph="piem., VW Passat">
+                <span class="opt__body">
+                  <span class="opt__top"><span class="opt__name">Interjera detailings</span></span>
+                  <span class="opt__desc">Šuves, spraugas un grūti aizsniedzamas vietas.</span>
+                </span>
+              </label>
+              <label class="opt">
+                <input type="radio" name="service" value="ozonesana" data-msg="{{msg.ozonesana}}" data-ask="Tavs auto" data-ph="piem., VW Passat">
+                <span class="opt__body">
+                  <span class="opt__top"><span class="opt__name">Ozonēšana</span></span>
+                  <span class="opt__desc">Palīdz tikt vaļā no nepatīkamām un spēcīgām smakām.</span>
+                </span>
+              </label>
+              <label class="opt">
+                <input type="radio" name="service" value="autoparks" data-msg="{{msg.autoparks}}" data-ask="Cik auto ir autoparkā?" data-ph="piem., 5">
+                <span class="opt__body">
+                  <span class="opt__top"><span class="opt__name">Uzņēmuma autoparks</span></span>
+                  <span class="opt__desc">Vairākas mašīnas vai regulāra tīrīšana par labāku cenu.</span>
+                </span>
+              </label>
             </div>
-            <p>Putekļi, gruži un netīrumi salonā.</p>
-            <a class="service__link" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieteikt WhatsApp</span></a>
-          </li>
-          <li class="service">
-            <div class="service__top">
-              <h3>Ķīmiskā tīrīšana</h3>
+          </fieldset>
+          <div class="builder__side">
+            <div class="builder__step">
+              <label class="step-label" for="car"><span class="step-n">2</span> <span id="car-label">Tavs auto</span> <span class="step-optional">(nav obligāti)</span></label>
+              <input class="field" id="car" name="car" type="text" autocomplete="off" placeholder="piem., VW Passat" maxlength="60">
             </div>
-            <p>Traipi uz sēdekļiem vai paklājiem. Atsūti foto, un pateiksim cenu.</p>
-            <a class="service__link" href="{{wa.kimiska}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt cenu WhatsApp</span></a>
-          </li>
-          <li class="service">
-            <div class="service__top">
-              <h3>Interjera detailings</h3>
+            <div class="builder__step">
+              <p class="step-label"><span class="step-n">3</span> Nosūti ziņu</p>
+              <div class="bubble" aria-live="polite">
+                <p id="msg-preview">{{msg.main}}</p>
+              </div>
+              <a class="btn btn--wa btn--block" id="builder-send" href="{{wa.main}}" target="_blank" rel="noopener">{{waIcon}}<span>Sūtīt ziņu WhatsApp</span></a>
+              <p class="builder__note">Atvērsies WhatsApp ar šo ziņu. Pirms sūtīšanas vari to papildināt.</p>
             </div>
-            <p>Šuves, spraugas un grūti aizsniedzamas vietas.</p>
-            <a class="service__link" href="{{wa.detailings}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt cenu WhatsApp</span></a>
-          </li>
-          <li class="service">
-            <div class="service__top">
-              <h3>Ozonēšana</h3>
-            </div>
-            <p>Palīdz tikt vaļā no nepatīkamām un spēcīgām smakām.</p>
-            <a class="service__link" href="{{wa.ozonesana}}" target="_blank" rel="noopener">{{waIcon}}<span>Jautāt cenu WhatsApp</span></a>
-          </li>
-        </ul>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="uznemumiem" aria-labelledby="b2b-title">
+      <div class="container b2b">
+        <div>
+          <h2 id="b2b-title">Uzņēmumu autoparkiem</h2>
+          <p class="b2b__text">Tīrām uzņēmumu auto. Ja mašīnu ir vairākas vai tīrīšana notiek regulāri, piedāvāsim labāku cenu.</p>
+        </div>
+        <div class="b2b__action">
+          <a class="btn btn--wa" href="{{wa.autoparks}}" target="_blank" rel="noopener">{{waIcon}}<span>Pieprasīt cenu autoparkam</span></a>
+          <p class="b2b__note">Uzraksti, cik auto ir autoparkā un cik bieži tos vajag tīrīt.</p>
+        </div>
       </div>
     </section>
 
@@ -178,6 +219,10 @@
           <details class="faq__item">
             <summary><h3>Kā pieteikt vizīti?</h3></summary>
             <p>Vizīti piesaki WhatsApp: spied „Pieteikt vizīti WhatsApp” vai raksti uz {{phoneDisplay}}.</p>
+          </details>
+          <details class="faq__item">
+            <summary><h3>Vai tīrāt uzņēmumu autoparkus?</h3></summary>
+            <p>Jā, tīrām uzņēmumu autoparkus. Vairākām mašīnām un regulārai tīrīšanai piedāvāsim labāku cenu, uzraksti mums WhatsApp.</p>
           </details>
         </div>
       </div>
