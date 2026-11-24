@@ -36,6 +36,8 @@ const jsonLd = {
   name: cfg.businessName,
   url: `${siteUrl}/`,
   image: `${siteUrl}/img/og-pirms-pec.jpg`,
+  logo: `${siteUrl}/img/logo.png`,
+  sameAs: cfg.instagram ? [cfg.instagram] : undefined,
   telephone: tel,
   address: {
     "@type": "PostalAddress",
@@ -51,7 +53,7 @@ const jsonLd = {
     name: "Auto salona kopšanas pakalpojumi",
     itemListElement: [
       service("Auto salona tīrīšana", {
-        priceSpecification: { "@type": "PriceSpecification", minPrice: 30, maxPrice: 50, priceCurrency: "EUR" },
+        priceSpecification: { "@type": "PriceSpecification", minPrice: 30, priceCurrency: "EUR" },
       }),
       service("Salona ķīmiskā tīrīšana"),
       service("Interjera detailings"),
@@ -73,6 +75,8 @@ const ctx = {
   wa,
   address: a,
   waIcon,
+  instagram: cfg.instagram,
+  logoSvg: read("logo-inline.svg").trim(),
   year: String(new Date().getFullYear()),
   inlineCss: minifyCss(read("styles.css")),
   inlineJs: read("main.js").trim(),
@@ -80,7 +84,7 @@ const ctx = {
 };
 
 const escapeAttr = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
-const RAW = new Set(["waIcon", "inlineCss", "inlineJs", "jsonLd"]);
+const RAW = new Set(["waIcon", "logoSvg", "inlineCss", "inlineJs", "jsonLd"]);
 let html = read("index.html").replace(/\{\{([\w.]+)\}\}/g, (m, key) => {
   const val = key.split(".").reduce((o, k) => (o == null ? o : o[k]), ctx);
   if (typeof val !== "string") throw new Error(`Unknown template key: ${key}`);
