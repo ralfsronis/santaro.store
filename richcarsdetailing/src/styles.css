@@ -82,8 +82,8 @@ a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; 
 /* Header */
 .site-header { position: relative; z-index: 40; }
 .site-header__inner { display: flex; align-items: center; gap: 12px; min-height: 68px; }
-.brand { display: inline-flex; padding-block: 6px; color: var(--graphite); margin-right: auto; }
-.logo { display: block; height: 48px; width: auto; overflow: visible; }
+.brand { display: inline-flex; padding-block: 4px; margin-right: auto; border-radius: 999px; }
+.logo { display: block; height: 54px; width: auto; overflow: visible; }
 .nav { display: flex; gap: 2px; list-style: none; }
 .nav a {
   display: inline-block; padding: 10px 12px; font-size: 0.9375rem; font-weight: 600;
@@ -101,7 +101,7 @@ a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; 
     transition: border-color 200ms ease;
   }
   .site-header[data-scrolled="true"] { border-bottom-color: var(--line); }
-  .logo { height: 54px; }
+  .logo { height: 60px; }
   .site-header .header-cta { display: inline-flex; }
 }
 
@@ -370,7 +370,7 @@ html:not(.js) .picker__tabs { display: none; }
 @keyframes draw { from { stroke-dashoffset: 1; } }
 @keyframes fade { from { opacity: 0; } }
 @keyframes shine { to { transform: translateX(110%); } }
-@keyframes twinkle { 0%, 100% { transform: scale(1); } 50% { transform: scale(0.55) rotate(20deg); } }
+@keyframes logo-sheen { from { opacity: 0.9; transform: skewX(-18deg) translateX(0); } to { opacity: 0.9; transform: skewX(-18deg) translateX(560px); } }
 @keyframes pop { from { transform: scale(0.6); opacity: 0; } }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -391,8 +391,8 @@ html:not(.js) .picker__tabs { display: none; }
   .js .hand-arrow__line { animation: draw 480ms var(--ease-in-out) 1050ms backwards; }
   .js .hand-arrow__head { animation: draw 200ms var(--ease-out) 1500ms backwards; }
   .js #hero-cta::after { animation: shine 900ms var(--ease-in-out) 1650ms; }
-  .js .logo__spark { transform-box: fill-box; transform-origin: center; animation: twinkle 700ms var(--ease-in-out) 600ms; }
-  .js .logo__spark--2 { animation-delay: 760ms; }
+  /* One light sweep across the glass logo on load */
+  .js .logo__sheen { animation: logo-sheen 1300ms var(--ease-in-out) 500ms; }
 
   /* Scroll: sections settle in once as they arrive */
   .js .sr { transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
