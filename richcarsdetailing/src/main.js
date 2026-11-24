@@ -10,49 +10,6 @@
     onScroll();
   }
 
-  // Sections settle in once as they arrive. Without IntersectionObserver
-  // everything is simply shown.
-  var revealEls = document.querySelectorAll(".sr");
-  if (io) {
-    var srObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        e.target.classList.add("is-in");
-        srObserver.unobserve(e.target);
-      });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-    revealEls.forEach(function (el) { srObserver.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("is-in"); });
-  }
-
-  // Service picker: tabs with arrow-key support. Without JS all panels show.
-  document.querySelectorAll("[data-picker]").forEach(function (picker) {
-    var tabs = Array.prototype.slice.call(picker.querySelectorAll('[role="tab"]'));
-    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute("aria-controls")); });
-    function select(i, focus) {
-      tabs.forEach(function (t, j) {
-        var on = i === j;
-        t.setAttribute("aria-selected", on ? "true" : "false");
-        t.tabIndex = on ? 0 : -1;
-        panels[j].hidden = !on;
-      });
-      if (focus) tabs[i].focus();
-    }
-    tabs.forEach(function (t, i) {
-      t.addEventListener("click", function () { select(i, false); });
-      t.addEventListener("keydown", function (e) {
-        var k = e.key, n = tabs.length, next = null;
-        if (k === "ArrowRight" || k === "ArrowDown") next = (i + 1) % n;
-        else if (k === "ArrowLeft" || k === "ArrowUp") next = (i - 1 + n) % n;
-        else if (k === "Home") next = 0;
-        else if (k === "End") next = n - 1;
-        if (next !== null) { e.preventDefault(); select(next, true); }
-      });
-    });
-    select(0, false);
-  });
-
   // Before/after: tap or click to wipe in the result, again to go back.
   // The first time a photo comes into view it peeks at the result once.
   document.querySelectorAll("[data-reveal]").forEach(function (box) {

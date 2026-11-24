@@ -13,6 +13,7 @@ Statiska vienas lapas mājaslapa (bez atkarībām). Gatavā versija ir mapē `di
 | Lapas teksti | `src/index.html` |
 | Fotogrāfijas | `src/img/` (`bmw-*` ievadā, `mercedes-*` sadaļā „Pirms un pēc”). Aizstājot saglabā tos pašus nosaukumus un 3:4 proporciju. |
 | Stils | `src/styles.css` |
+| Logo | `logo/` (SVG un PNG). Lapas galvenes zīmējums: `src/logo-inline.svg`, cilnes ikona: `src/favicon.svg` |
 
 ## Būvēšana
 
