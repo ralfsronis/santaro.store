@@ -131,20 +131,17 @@ a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; 
 @media (max-width: 699px) { .nav__hide-sm { display: none; } }
 
 /* Hero */
-.hero { padding-block: 16px 56px; }
-.hero__grid { display: grid; gap: 32px; }
-.hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+/* Phone: photo first, then headline, price and button (all inside the first screen).
+   Desktop: offer on the left, photo on the right, both starting at the top. */
+.hero { padding-block: 4px 48px; }
+.hero__grid { display: grid; gap: 20px; }
+.hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 
-.eyebrow {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--ink-2);
-}
 h1 {
-  font-size: clamp(2.125rem, 1.55rem + 2.9vw, 3.75rem);
+  font-size: clamp(1.875rem, 1.45rem + 2.9vw, 3.75rem);
   font-weight: 800;
 }
-.lead { font-size: 1.125rem; color: var(--ink-2); max-width: 34em; }
+.lead { font-size: 1.0625rem; color: var(--ink-2); max-width: 34em; }
 
 .price-row {
   display: inline-flex;
@@ -290,10 +287,15 @@ figcaption {
 }
 
 
+@media (max-width: 899px) {
+  .hero .reveal { aspect-ratio: 1 / 1; }
+  .hero .reveal__layer img { object-position: 50% 62%; }
+}
 @media (min-width: 900px) {
-  .hero { padding-block: 40px 96px; }
-  .hero__grid { grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
-  .hero__copy { gap: 22px; }
+  .hero { padding-block: 8px 88px; }
+  .hero__grid { grid-template-columns: 1fr 1.1fr; grid-template-areas: "copy media"; gap: 56px; align-items: center; }
+  .hero__media { grid-area: media; max-width: 560px; margin-inline: 0 0; justify-self: end; }
+  .hero__copy { grid-area: copy; gap: 20px; }
 }
 
 /* Sections */
@@ -310,20 +312,31 @@ figcaption {
 .service {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 24px;
+  gap: 10px;
+  padding: 22px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
-.service h3 { font-size: 1.3125rem; font-weight: 800; }
-.service p { color: var(--ink-2); }
-.service .service__price { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-top: auto; padding-top: 4px; }
-.service .btn { align-self: flex-start; }
+.service__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  background: var(--graphite);
+  color: var(--on-graphite);
+}
+.service__icon svg { width: 26px; height: 26px; }
+.service h3 { font-size: 1.25rem; font-weight: 800; }
+.service p { color: var(--ink-2); margin-bottom: 6px; }
+.service .btn { align-self: flex-start; margin-top: auto; }
 @media (min-width: 900px) { .services { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
 
 /* Work */
-#darbi .section__head { margin-inline: auto; text-align: center; }
+.section__head--center { margin-inline: auto; text-align: center; }
+.work figcaption { text-align: center; }
 
 /* Steps */
 .steps { display: grid; gap: 16px; counter-reset: none; }
@@ -352,15 +365,40 @@ figcaption {
 }
 
 /* FAQ */
-.faq { display: grid; gap: 12px; }
+.faq { display: grid; gap: 10px; }
 .faq__item {
-  padding: 22px 24px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
-.faq__item h3 { font-size: 1.1875rem; font-weight: 800; }
-.faq__item p { margin-top: 8px; color: var(--ink-2); }
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius);
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::after {
+  content: "+";
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bg-tint);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms var(--ease-out);
+}
+.faq__item[open] summary::after { transform: rotate(45deg); }
+.faq__item h3 { font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; }
+.faq__item p { padding: 0 22px 20px; color: var(--ink-2); }
 
 /* Location */
 .location { display: grid; gap: 32px; }
@@ -421,4 +459,8 @@ figcaption {
   .hero .cta, .hero .btn--wa { width: 100%; }
   .hero .price-row { width: 100%; }
   .service .btn { align-self: stretch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__item summary::after { transition: none; }
 }
