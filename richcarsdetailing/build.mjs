@@ -77,6 +77,7 @@ const ctx = {
   waIcon,
   instagram: cfg.instagram,
   logoSvg: read("logo-inline.svg").trim(),
+  handArrow: read("hand-arrow.svg").trim(),
   year: String(new Date().getFullYear()),
   inlineCss: minifyCss(read("styles.css")),
   inlineJs: read("main.js").trim(),
@@ -84,7 +85,7 @@ const ctx = {
 };
 
 const escapeAttr = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
-const RAW = new Set(["waIcon", "logoSvg", "inlineCss", "inlineJs", "jsonLd"]);
+const RAW = new Set(["waIcon", "logoSvg", "handArrow", "inlineCss", "inlineJs", "jsonLd"]);
 let html = read("index.html").replace(/\{\{([\w.]+)\}\}/g, (m, key) => {
   const val = key.split(".").reduce((o, k) => (o == null ? o : o[k]), ctx);
   if (typeof val !== "string") throw new Error(`Unknown template key: ${key}`);
